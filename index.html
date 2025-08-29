@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CALCULEMA — Tabela-Verdade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="container">
+    <!-- HERO com a ema + título -->
+    <header class="hero">
+        <div class="figure">
+            <!-- tenta URL; se falhar, usa img/ema.png -->
+            <img
+                    src="https://www.unifor.br/documents/20143/703914/Ema-Deita.png?t=1624458433327"
+                    onerror="this.onerror=null; this.src='img/ema.png';"
+                    class="mascote"
+                    alt="Ema mascote deitada apontando">
+            <div class="bubble" role="note">Me conte todas suas proposições...</div>
+        </div>
+
+        <div class="title">
+            <h1>CALCULEMA</h1>
+            <p class="tagline">A calculadora de lógica proposicional da Moema!</p>
+        </div>
+    </header>
+
+    <p class="subtitle">
+        Monte fórmulas com até 4 termos: <b>A, B, C, D</b>. Notação padrão: <b>V/F</b>.
+    </p>
+
+    <div class="panel">
+        <div class="row keypad">
+            <button data-ins="A">A</button>
+            <button data-ins="B">B</button>
+            <button data-ins="C">C</button>
+            <button data-ins="D">D</button>
+
+            <button data-ins="!" title="Não (¬)">¬</button>
+            <button data-ins="&" title="E (∧)">∧</button>
+            <button data-ins="|" title="Ou (∨)">∨</button>
+            <button data-ins="->" title="Implica (→)">→</button>
+            <button data-ins="<->" title="Equivale (↔)">↔</button>
+
+            <button data-ins="(">(</button>
+            <button data-ins=")">)</button>
+
+            <button class="warn" data-cmd="del">⌫</button>
+            <button class="danger" data-cmd="clear">C</button>
+        </div>
+
+        <label for="expr">Fórmula:</label>
+        <input id="expr" class="display" placeholder="Ex.: (A ∧ B) → ¬C" />
+
+        <div class="toolbar">
+            <button id="fmt-toggle" class="toggle" aria-pressed="true" title="Alternar formato (V/F ↔ 0/1)">
+                Formato: <b>V/F</b>
+            </button>
+
+            <button id="btn-calc" class="primary">Calcular</button>
+        </div>
+    </div>
+
+    <div id="table-wrap" class="table-wrap hidden">
+        <h2>Resultado</h2>
+        <div id="meta" class="meta"></div>
+        <div id="table-container"></div>
+    </div>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
